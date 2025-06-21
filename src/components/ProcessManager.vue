@@ -117,7 +117,8 @@
             fontSize: '14px',
             borderBottom: '1px solid #e5e7eb',
             height: '48px'
-          }" :row-style="{ height: '52px' }" :cell-style="{ padding: '8px 16px', borderBottom: '1px solid #f3f4f6' }" :stripe="false">
+          }" :row-style="{ height: '52px' }" :cell-style="{ padding: '8px 16px', borderBottom: '1px solid #f3f4f6' }"
+            :stripe="false">
 
             <!-- 自定义空状态 -->
             <template #empty>
@@ -176,11 +177,9 @@
               <template #default="{ row }">
                 <div class="w-full max-w-[160px] mx-auto">
                   <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
-                    <div 
-                      class="bg-gray-500 h-2 rounded-full transition-all duration-300" 
-                      :style="{
-                        width: `${((row.burstTime - row.remainingTime) / row.burstTime) * 100}%`
-                      }">
+                    <div class="bg-gray-500 h-2 rounded-full transition-all duration-300" :style="{
+                      width: `${((row.burstTime - row.remainingTime) / row.burstTime) * 100}%`
+                    }">
                     </div>
                   </div>
                   <span class="font-mono text-gray-700 text-xs">
@@ -202,8 +201,7 @@
               <template #default="{ $index }">
                 <button
                   class="w-7 h-7 bg-white border border-gray-300 rounded hover:bg-red-50 hover:border-red-300 flex items-center justify-center text-gray-400 hover:text-red-500 transition-colors"
-                  @click="removeProcess($index)"
-                  title="删除进程">
+                  @click="removeProcess($index)" title="删除进程">
                   <el-icon class="text-sm">
                     <Delete />
                   </el-icon>
