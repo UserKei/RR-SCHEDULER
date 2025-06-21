@@ -1,0 +1,39 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* 自定义全局样式 */
+body {
+  @apply bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen;
+}
+
+/* Element Plus 主题定制 */
+.el-card {
+  @apply shadow-lg border-0 rounded-xl;
+}
+
+.el-button {
+  @apply rounded-lg font-medium;
+}
+
+.el-table {
+  @apply rounded-lg overflow-hidden;
+}
+
+/* 自定义动画类 */
+.process-card {
+  @apply transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl;
+}
+
+.cpu-glow {
+  animation: pulse-cpu 2s infinite;
+}
+
+.queue-highlight {
+  animation: highlight-queue 1s ease-in-out infinite;
+}
+
+/* 甘特图样式 */
+.gantt-bar {
+  @apply rounded transition-all duration-300;
+}
