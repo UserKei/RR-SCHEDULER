@@ -97,6 +97,7 @@ npm run deploy
 ```
 
 **注意**：确保在 GitHub 仓库设置中：
+
 - 启用 GitHub Pages
 - 选择 `gh-pages` 分支作为源
 - 仓库名为 `kei`（或修改 `vite.config.ts` 中的 `base` 配置）
