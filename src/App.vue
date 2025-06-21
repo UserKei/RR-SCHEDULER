@@ -1,16 +1,16 @@
 <template>
-  <div id="app" class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+  <div id="app" class="min-h-screen bg-gray-50">
     <!-- 标题栏 -->
-    <header class="bg-white shadow-sm border-b">
+    <header class="bg-white border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex items-center justify-between">
           <div>
-            <h1 class="text-3xl font-bold text-gray-900">时间片轮转调度算法可视化</h1>
+            <h1 class="text-2xl font-semibold text-gray-900">时间片轮转调度算法可视化</h1>
             <p class="text-gray-600 mt-1">Round Robin Scheduling Algorithm Visualization</p>
           </div>
-          <div class="flex items-center space-x-4">
-            <el-tag type="primary" size="large">Vue 3 + TypeScript</el-tag>
-            <el-tag type="success" size="large">Element Plus</el-tag>
+          <div class="flex items-center space-x-3">
+            <span class="text-sm px-2 py-1 bg-gray-100 text-gray-700 rounded">Vue 3 + TypeScript</span>
+            <span class="text-sm px-2 py-1 bg-gray-100 text-gray-700 rounded">Element Plus</span>
           </div>
         </div>
       </div>
@@ -37,9 +37,9 @@
         </section>
 
         <!-- 算法说明 -->
-        <section class="bg-white rounded-xl shadow-lg p-6">
-          <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-            <el-icon class="mr-2 text-indigo-500">
+        <section class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+            <el-icon class="mr-2 text-gray-600">
               <InfoFilled />
             </el-icon>
             算法说明
@@ -47,52 +47,52 @@
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
-              <h4 class="text-lg font-semibold text-gray-700 mb-3">时间片轮转算法原理</h4>
-              <ul class="space-y-2 text-gray-600">
+              <h4 class="text-base font-medium text-gray-900 mb-3">时间片轮转算法原理</h4>
+              <ul class="space-y-2 text-gray-600 text-sm">
                 <li class="flex items-start">
-                  <span class="text-blue-500 mr-2">•</span>
+                  <span class="text-gray-400 mr-2">•</span>
                   <span>每个进程分配相等的时间片（时间量子）</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-blue-500 mr-2">•</span>
+                  <span class="text-gray-400 mr-2">•</span>
                   <span>进程按到达时间顺序进入就绪队列</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-blue-500 mr-2">•</span>
+                  <span class="text-gray-400 mr-2">•</span>
                   <span>CPU从队头取出进程执行一个时间片</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-blue-500 mr-2">•</span>
+                  <span class="text-gray-400 mr-2">•</span>
                   <span>时间片用完后，进程回到队尾（如未完成）</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-blue-500 mr-2">•</span>
+                  <span class="text-gray-400 mr-2">•</span>
                   <span>重复直到所有进程执行完毕</span>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 class="text-lg font-semibold text-gray-700 mb-3">算法特点</h4>
-              <ul class="space-y-2 text-gray-600">
+              <h4 class="text-base font-medium text-gray-900 mb-3">算法特点</h4>
+              <ul class="space-y-2 text-gray-600 text-sm">
                 <li class="flex items-start">
-                  <span class="text-green-500 mr-2">✓</span>
+                  <span class="text-green-600 mr-2">✓</span>
                   <span>公平性好，每个进程都能获得CPU时间</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-green-500 mr-2">✓</span>
+                  <span class="text-green-600 mr-2">✓</span>
                   <span>响应时间较短，适合交互式系统</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-green-500 mr-2">✓</span>
+                  <span class="text-green-600 mr-2">✓</span>
                   <span>不会出现饥饿现象</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-yellow-500 mr-2">⚠</span>
+                  <span class="text-yellow-600 mr-2">⚠</span>
                   <span>时间片大小影响性能和响应时间</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-yellow-500 mr-2">⚠</span>
+                  <span class="text-yellow-600 mr-2">⚠</span>
                   <span>上下文切换开销相对较大</span>
                 </li>
               </ul>
@@ -103,9 +103,9 @@
     </main>
 
     <!-- 页脚 -->
-    <footer class="bg-white border-t mt-12">
+    <footer class="bg-white border-t border-gray-200 mt-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div class="text-center text-gray-500">
+        <div class="text-center text-gray-500 text-sm">
           <p>© 2025 时间片轮转调度算法可视化系统 | 基于 Vue 3 + TypeScript + Tailwind CSS + Element Plus 构建</p>
         </div>
       </div>
@@ -148,47 +148,40 @@ const handleUpdateGanttData = (newGanttData: GanttItem[]) => {
 
 <style>
 #app {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* 全局滚动条样式 */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+  background: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  background: #d1d5db;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #9ca3af;
 }
 
 /* Element Plus 全局样式调整 */
-.el-card {
-  border-radius: 12px !important;
-  border: none !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
-}
-
 .el-button {
-  border-radius: 8px !important;
+  border-radius: 6px !important;
   font-weight: 500 !important;
 }
 
 .el-table {
-  border-radius: 8px !important;
+  border-radius: 6px !important;
   overflow: hidden !important;
 }
 
 .el-dialog {
-  border-radius: 12px !important;
+  border-radius: 8px !important;
 }
 </style>

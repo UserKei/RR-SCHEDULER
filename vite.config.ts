@@ -19,4 +19,9 @@ export default defineConfig({
       plugins: [tailwindcss, autoprefixer],
     },
   },
+  base: '/RR-SCHEDULER/', // GitHub Pages 仓库名
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
 })

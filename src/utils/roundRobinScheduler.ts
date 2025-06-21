@@ -140,6 +140,24 @@ export class RoundRobinScheduler {
     const sortedProcesses = [...this.processes].sort((a, b) => a.arrivalTime - b.arrivalTime)
     let processIndex = 0
 
+    // 创建一个函数来获取所有进程的当前状态
+    const getAllProcessesState = (): Process[] => {
+      const allProcesses: Process[] = []
+
+      // 添加已完成的进程
+      allProcesses.push(...completedProcesses)
+
+      // 添加就绪队列中的进程
+      allProcesses.push(...readyQueue)
+
+      // 添加尚未到达的进程
+      for (let i = processIndex; i < sortedProcesses.length; i++) {
+        allProcesses.push({ ...sortedProcesses[i] })
+      }
+
+      return allProcesses
+    }
+
     while (completedProcesses.length < this.processes.length) {
       // 将到达的进程加入就绪队列
       while (
@@ -166,7 +184,7 @@ export class RoundRobinScheduler {
       // 返回选中状态
       yield {
         ganttChart: [...ganttChart],
-        processes: [...completedProcesses],
+        processes: getAllProcessesState(),
         stats: this.calculateStats([...completedProcesses], currentTime, [...ganttChart]),
         currentTime,
         selectedProcess: selectedProcess,
@@ -198,7 +216,7 @@ export class RoundRobinScheduler {
       // 返回执行状态
       yield {
         ganttChart: [...ganttChart],
-        processes: [...completedProcesses],
+        processes: getAllProcessesState(),
         stats: this.calculateStats([...completedProcesses], currentTime, [...ganttChart]),
         currentTime,
         currentProcess: { ...currentProcess },
@@ -230,7 +248,7 @@ export class RoundRobinScheduler {
     // 最终状态
     yield {
       ganttChart,
-      processes: completedProcesses,
+      processes: getAllProcessesState(),
       stats: this.calculateStats(completedProcesses, currentTime, ganttChart),
       currentTime,
     }
